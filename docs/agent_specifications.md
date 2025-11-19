@@ -1,16 +1,14 @@
-
-```
-docs/agent_specifications.md
-```
+ 
+# Agent Specifications
 
 It contains:
 
-✔ Official agent names
-✔ Roles, responsibilities, prompts
-✔ Inputs & outputs
-✔ Tools used
-✔ Example queries
-✔ Integration notes
+    ✔ Official agent names
+    ✔ Roles, responsibilities, prompts
+    ✔ Inputs & outputs
+    ✔ Tools used
+    ✔ Example queries
+    ✔ Integration notes
 
 ---
 
