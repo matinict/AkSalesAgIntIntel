@@ -27,21 +27,21 @@ This section outlines the key deliverables of the submission, including the code
 
 ### 📖 Project Structure
 
-    AkSalesAgIntIntel/
-    │
-    ├── README.md                          # This file - Complete documentation
-    ├── sales_agents.py                    # Core: Multi-agent system (Jupyter Notebook)
-    ├── chatbot_ui.py                      # Streamlit conversational interface
-    ├── akij_sales_data_complete.csv       # Generated sales dataset (4000+ records)
-    ├── n8n_akij_payload_*.json           # AI payload for n8n integration
-    ├── n8n_akij_workflow_*.json          # Importable n8n workflow
-    │
-    ├── requirements.txt                   # Python dependencies
-    ├── .env.example                       # Environment configuration template
-    └── docs/
-        ├── architecture.md                # System architecture details
-        ├── agent_specifications.md        # Individual agent capabilities
-        └── deployment_guide.md            # Production deployment guide
+        AkSalesAgIntIntel/
+        │
+        ├── README.md                          # This file - Complete documentation
+        ├── sales_agents.py                    # Core: Multi-agent system (Jupyter Notebook)
+        ├── chatbot_ui.py                      # Streamlit conversational interface
+        ├── akij_sales_data_complete.csv       # Generated sales dataset (4000+ records)
+        ├── n8n_akij_payload_*.json           # AI payload for n8n integration
+        ├── n8n_akij_workflow_*.json          # Importable n8n workflow
+        │
+        ├── requirements.txt                   # Python dependencies
+        ├── .env.example                       # Environment configuration template
+        └── docs/
+            ├── [architecture.md](docs/architecture.md)                # System architecture details
+            ├── agent_specifications.md        # Individual agent capabilities
+            └── deployment_guide.md            # Production deployment guide
 
 
 ### 📖 Project Documentation
