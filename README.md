@@ -40,9 +40,6 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
         ├── agent_specifications.md        # Individual agent capabilities
         └── deployment_guide.md            # Production deployment guide
 
-> **🔔 Note:** Links work because these are NOT inside a code block.
-
-- [README.md](README.md) — Complete documentation  
 - [sales_agents.py](sales_agents.py) — Core multi-agent system  
 - [chatbot_ui.py](chatbot_ui.py) — Streamlit UI  
 - [akij_sales_data_complete.csv](akij_sales_data_complete.csv) — Sales dataset  
@@ -51,18 +48,14 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 - [requirements.txt](requirements.txt)  
 - [.env.example](.env.example)  
 
-### 📂 Docs Folder
-
-- [docs/architecture.md](docs/architecture.md) — System architecture  
-- [docs/agent_specifications.md](docs/agent_specifications.md) — Agent capabilities  
-- [docs/deployment_guide.md](docs/deployment_guide.md) — Deployment instructions  
-
+ 
 ---
 
 ## 📖 Project Documentation
 
 | Document | Path | Description |
 |----------|------|-------------|
+| **README.md** | [README.md](README.md) | Summery documentation |
 | **System Architecture** | [docs/architecture.md](docs/architecture.md) | Multi-agent + LangChain workflow architecture |
 | **Agent Specifications** | [docs/agent_specifications.md](docs/agent_specifications.md) | Roles, prompts, tools |
 | **Deployment Guide** | [docs/deployment_guide.md](docs/deployment_guide.md) | Local/cloud deployment |
