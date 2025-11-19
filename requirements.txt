@@ -1,0 +1,110 @@
+# ===================================================================
+# AKIJ RESOURCE - MULTI-AGENT SALES INTELLIGENCE SYSTEM
+# Requirements File
+# Author: Abdul Matin
+# Organization: Akij Resource
+# Date: November 2025
+# Python: 3.9+
+# ===================================================================
+
+# Core Data Processing
+pandas==2.1.4
+numpy==1.26.2
+
+# Visualization
+plotly==5.18.0
+
+# Date & Time
+python-dateutil==2.8.2
+
+# AI/ML Frameworks (Optional - for LangChain integration)
+langchain==0.1.0
+langchain-openai==0.0.5
+langchain-community==0.0.10
+
+# LLM Providers (Optional - uncomment if needed)
+# openai==1.6.1
+# anthropic==0.8.1
+
+# Web Interface (for Streamlit chatbot)
+streamlit==1.29.0
+
+# Environment Management
+python-dotenv==1.0.0
+
+# Utilities
+warnings==0.1.0  # Built-in, but listed for completeness
+
+# ===================================================================
+# INSTALLATION INSTRUCTIONS
+# ===================================================================
+
+# METHOD 1: Install all dependencies
+# pip install -r requirements.txt
+
+# METHOD 2: Install minimal (without LangChain/Streamlit)
+# pip install pandas numpy plotly python-dateutil
+
+# METHOD 3: Virtual Environment (Recommended)
+# python3 -m venv akij-env
+# source akij-env/bin/activate  # On Windows: akij-env\Scripts\activate
+# pip install -r requirements.txt
+
+# ===================================================================
+# OPTIONAL DEPENDENCIES
+# ===================================================================
+
+# For Advanced Analytics
+# scikit-learn==1.3.2
+# scipy==1.11.4
+
+# For Jupyter Notebooks
+# jupyter==1.0.0
+# ipykernel==6.27.1
+
+# For n8n Local Development
+# nodejs>=18.0.0  # Required for n8n
+
+# ===================================================================
+# SYSTEM REQUIREMENTS
+# ===================================================================
+
+# Operating System: Linux, macOS, Windows
+# Python Version: 3.9 or higher
+# RAM: Minimum 4GB (8GB recommended)
+# Disk Space: 500MB for dependencies + data files
+
+# ===================================================================
+# NOTES
+# ===================================================================
+
+# 1. All core analytics work with: pandas, numpy, plotly
+# 2. LangChain is optional - only needed for advanced LLM features
+# 3. Streamlit is only needed for the web chatbot interface
+# 4. The system works perfectly without OpenAI/Anthropic API keys
+
+# ===================================================================
+# VERIFICATION
+# ===================================================================
+
+# After installation, verify with:
+# python -c "import pandas, numpy, plotly; print('✅ Core dependencies OK')"
+# python -c "import streamlit; print('✅ Streamlit OK')"
+# python -c "import langchain; print('✅ LangChain OK')"
+
+# ===================================================================
+# TROUBLESHOOTING
+# ===================================================================
+
+# Issue: "externally-managed-environment" error
+# Solution: Use virtual environment (see METHOD 3 above)
+
+# Issue: Plotly not rendering
+# Solution: Update browser or use: pip install --upgrade plotly
+
+# Issue: Streamlit deprecation warnings
+# Solution: Already handled in chatbot_ui_clean.py
+
+# ===================================================================
+# END OF REQUIREMENTS
+# ===================================================================
