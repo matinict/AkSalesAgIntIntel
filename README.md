@@ -1,56 +1,96 @@
-# AkSalesAgIntIntel
+# AkSalesAgIntIntel: Multi-Agent Sales Intelligence System
 
-
-
-
-
-# 📊 AkSalesAgIntIntel: Multi-Agent Sales Intelligence System
+**GitHub Repository:** [https://github.com/matinict/AkSalesAgIntIntel](https://github.com/matinict/AkSalesAgIntIntel)
 
 [![Python](https://img.shields.io/badge/Language-Python%203.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/Framework-LangChain-04C4A4?logo=chainlink)](https://www.langchain.com/)
-[![UI](https://img.shields.io/badge/Interface-Streamlit-FF4B4B?logo=streamlit)](https://streamlit.io/)
+[![Agentic AI](https://img.shields.io/badge/Architecture-Multi--Agent-007bff)](https://www.langchain.com/)
 [![Orchestration](https://img.shields.io/badge/Workflow-n8n%20Integration-FF6200?logo=n8n)](https://n8n.io/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![UI](https://img.shields.io/badge/Interface-Streamlit-FF4B4B?logo=streamlit)](https://streamlit.io/)
 
-A comprehensive Agentic Intelligence system built to provide deep, real-time sales analytics and generate prescriptive actions for Akij Resource. This project demonstrates expertise in constructing scalable, multi-agent architectures integrated with external workflow automation tools.
+A comprehensive **Agentic Intelligence system** built to provide deep, real-time sales analytics and generate **prescriptive actions** for Akij Resource. This project was developed as a submission for the **AI Agent & Agentic Intelligence Specialist** position.
 
-## ✨ Key Features (LLM Engineering Focus)
+It demonstrates expertise in constructing scalable, multi-agent architectures integrated with external workflow automation tools like n8n, built on a LangChain foundation.
 
-This system is built around a robust multi-agent architecture to perform complex data analysis and autonomously coordinate to deliver actionable insights.
+---
 
- Multi-Agent Coordination: Implemented autonomous agents (e.g., Data Analyst Agent, Predictive Agent, Prescriptive Agent) using LangChain to break down complex queries and coordinate task execution.
- Full Analytical Framework: Executes a complete, four-stage analytical cycle in response to natural language queries:
-    1.  Descriptive Analytics: What has happened? (Metrics, KPIs)
-    2.  Diagnostic Analytics: Why did it happen? (Root Cause Analysis, Trend Comparison)
-    3.  Predictive Analytics: What is likely to happen? (Forecasting, Risk Assessment)
-    4.  Prescriptive Analytics: What actions should be taken? (Business Recommendations)
- Hierarchical Data Analysis: Structured data access and querying across multiple organizational layers:
-     Product Category
-     Customer Segment
-     Region (Bangladesh Divisions)
-     Sales Channel
- n8n Workflow Orchestration: Built-in capability to generate a structured JSON payload for immediate triggering of a downstream n8n workflow (e.g., sending high-priority alerts, creating CRM tasks).
- Interactive Conversational UI: A Streamlit-based chatbot interface (`chatbot_ui.py`) allowing non-technical users to access all agent capabilities via natural language.
+## 📦 Project Submission and Downloadable Components
 
-## 💻 Setup and Installation
+This section outlines the key deliverables of the submission, including the code, documentation, and demonstration resources.
 
-Follow these steps to set up the project locally.
+| Artifact | File/Content | Access Link |
+| :--- | :--- | :--- |
+| **Complete Project Package** | All source code, documentation, and setup files. | [https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view?usp=sharing](https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view?usp=sharing) |
+| **Video Walkthrough** | Complete demonstration of system functionality. | [https://youtu.be/ahtN0UOX_vQ](https://youtu.be/ahtN0UOX_vQ) |
+| **Core Agent Logic** | Python source file (previously Jupyter Notebook). | `sales_agents.py` |
+| **Interactive Prototype** | Streamlit web application interface. | `chatbot_ui.py` |
+
+### 📖 Project Structure
+
+
+AkSalesAgIntIntel/
+│
+├── README.md                          # This file - Complete documentation
+├── sales_agents.py                    # Core: Multi-agent system (Jupyter Notebook)
+├── chatbot_ui.py                      # Streamlit conversational interface
+├── akij_sales_data_complete.csv       # Generated sales dataset (4000+ records)
+├── n8n_akij_payload_*.json           # AI payload for n8n integration
+├── n8n_akij_workflow_*.json          # Importable n8n workflow
+│
+├── requirements.txt                   # Python dependencies
+├── .env.example                       # Environment configuration template
+└── docs/
+    ├── architecture.md                # System architecture details
+    ├── agent_specifications.md        # Individual agent capabilities
+    └── deployment_guide.md            # Production deployment guide
+
+
+### 📖 Project Documentation
+
+Detailed documentation covering the system's design, agent roles, and deployment:
+
+| Document | Path | Description |
+| :--- | :--- | :--- |
+| **System Architecture** | `docs/architecture.md` | Overview of the LangChain, Multi-Agent, and n8n integration architecture. |
+| **Agent Specifications** | `docs/agent_specifications.md` | Detailed roles, tools, and prompts for individual analytical agents. |
+| **Deployment Guide** | `docs/deployment_guide.md` | Instructions for production deployment (local/cloud) and scaling. |
+
+---
+
+## 🔑 Key Agentic & Analytical Features
+
+### A. Four Analytical Frameworks
+
+The system responds to natural language queries by executing a complete, four-stage analytical cycle, leveraging separate LLM tools and agents for each stage:
+
+1.  **Descriptive Analytics:** *What has happened?*
+2.  **Diagnostic Analytics:** *Why did it happen?*
+3.  **Predictive Analytics:** *What is likely to happen?*
+4.  **Prescriptive Analytics:** *What actions should be taken?*
+
+### B. Agentic Intelligence & Orchestration
+
+* **Multi-Agent Coordination:** Implemented autonomous agents using **LangChain** for complex query decomposition, tool execution (data querying), and response synthesis.
+* **n8n Workflow Integration:** Includes structured JSON payload generation capability within the Prescriptive Agent, enabling a direct path from insight to automated business action via an **n8n workflow webhook**.
+* **Conversational Interface:** The Streamlit UI (`chatbot_ui.py`) acts as the front-end **AI Assistant**, interpreting queries and routing them to the appropriate analytical agent.
+
+### C. Data Hierarchy and Scope
+
+The system is built to handle analysis across the required hierarchical data layers:
+
+* **Product Category**
+* **Customer Segment**
+* **Region** (Bangladesh Divisions)
+* **Sales Channel**
+
+---
+
+## 🛠️ Setup and Execution
+
+To run the project, ensure you have your LLM API keys configured in a local `.env` file.
 
 ### 1. Clone the Repository
 
 ```bash
-git clone git@github.com:matinict/AkSalesAgIntIntel.git
+git clone [https://github.com/matinict/AkSalesAgIntIntel.git](https://github.com/matinict/AkSalesAgIntIntel.git)
 cd AkSalesAgIntIntel
-
-
-
-
-
-
-
-
-
-
-
-
-===
