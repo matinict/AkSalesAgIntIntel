@@ -55,7 +55,7 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 
 | Document | Path | Description |
 |----------|------|-------------|
-| **README.md** | [README.md](README.md) | Summery documentation |
+| **README.md** | [README.md](README.md) | Summary documentation |
 | **System Architecture** | [docs/architecture.md](docs/architecture.md) | Multi-agent + LangChain workflow architecture |
 | **Agent Specifications** | [docs/agent_specifications.md](docs/agent_specifications.md) | Roles, prompts, tools |
 | **Deployment Guide** | [docs/deployment_guide.md](docs/deployment_guide.md) | Local/cloud deployment |
