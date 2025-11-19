@@ -1,0 +1,12 @@
+# ===================================================================
+# MINIMAL REQUIREMENTS - Core Analytics Only
+# Use this for running sales_agents.py without Streamlit/LangChain
+# ===================================================================
+
+pandas==2.1.4
+numpy==1.26.2
+plotly==5.18.0
+python-dateutil==2.8.2
+
+# Installation:
+# pip install -r requirements-minimal.txt

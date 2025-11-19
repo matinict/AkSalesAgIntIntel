@@ -10,7 +10,7 @@ It contains:
     ✔ Example queries
     ✔ Integration notes
 
----
+ 
 
 # 🧠 **Agent Specifications – AkSalesAgentIntelligence**
 
@@ -18,402 +18,345 @@ This document describes the roles, responsibilities, logic, tools, and interacti
 
 The system consists of four analytical agents and two operational agents, designed to work together to answer sales queries, generate insights, and trigger business workflows.
 
+
+# ✅ **Architecture Diagram**
+
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                      MULTI-AGENT SYSTEM ARCHITECTURE                         │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   ┌──────────────┐     ┌──────────────┐     ┌──────────────┐                 │
+│   │   Agent 1    │     │   Agent 2    │     │   Agent 3    │                 │
+│   │ Descriptive  │ ───▶│ Diagnostic   │ ───▶│ Predictive   │                 │
+│   │ (What happened?)│  │ (Why happened?)│   │ (What will    │                 │
+│   └──────────────┘     └──────────────┘     │ happen?)      │                │
+│                                              └──────────────┘                │
+│            │                     │                     │                     │
+│            └─────────────────────┴─────────────────────┘                     │
+│                                 │                                            │
+│                                 ▼                                            │
+│                        ┌─────────────────────┐                               │
+│                        │      Agent 4        │                               │
+│                        │    Prescriptive     │                               │
+│                        │    (What to do?)    │                               │
+│                        └─────────────────────┘                               │
+│                                 │                                            │
+│       ┌─────────────────────────┴──────────────────────────┐                 │
+│       │                                                    │                 │
+│       ▼                                                    ▼                 │
+│   ┌─────────────────┐                          ┌────────────────────────┐    │
+│   │  Chatbot Agent  │                          │ n8n Workflow Builder   │    │
+│   │ (Conversational)│                          │  (Automation Engine)   │    │
+│   └─────────────────┘                          └────────────────────────┘    │
+│       │                                                    │                 │
+│       ▼                                                    ▼                 │
+│   ┌───────────────────────────────────────────────────────────────────────┐  │
+│   │                       Streamlit Dashboard UI                          │  │
+│   │            (Interactive Visualizations & Analytics)                   │  │
+│   └───────────────────────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
 ---
 
-# 🔍 **1. Descriptive Analytics Agent**
+# 📘 **Agent Specification (As Required by Job Description)**
 
-### **“What has happened?”**
+| Stage   | Agent Name                       | Task                  |
+| ------- | -------------------------------- | --------------------- |
+| **1**   | **Descriptive Analytics Agent**  | What happened?        |
+| **2**   | **Diagnostic Analytics Agent**   | Why it happened?      |
+| **3**   | **Predictive Analytics Agent**   | What will happen?     |
+| **4**   | **Prescriptive Analytics Agent** | What to do?           |
+| **Ops** | **Chatbot Agent**                | Conversational engine |
+| **Ops** | **n8n Workflow Builder Agent**   | Automation engine     |
+
+---
+ 
+  
+
+# 🧠 **Detailed Agent Specifications**
+
+This section expands each agent with **internal logic**, **reasoning patterns**, **data flow**, and **decision responsibilities**—exactly what interview panels look for when evaluating an AI Agentic Architecture.
 
 ---
 
-### **Purpose**
+# 1️⃣ **Descriptive Analytics Agent (Stage 1)**
 
-Processes the sales dataset and provides historical summaries, KPIs, and factual observations across:
+### 🏷 **Question Answered:** *“What has happened?”*
 
-* Product categories
-* Customer segments
-* Regions (BD Divisions)
-* Sales channels
-* Monthly/quarterly performance
+### 🎯 **Primary Goal:** Summarize past sales performance with factual, data-driven metrics.
 
 ---
 
-### **Responsibilities**
+## ✅ **Responsibilities**
 
-* Compute sales totals (revenue, profit, units)
-* Generate performance breakdowns
-* Identify top/bottom products, regions, customers
-* Trend comparison (MoM, QoQ, YoY)
-* Provide clean, structured summary
-
----
-
-### **Inputs**
-
-* Filtered dataset (based on user query)
-* Query intent extracted by controller agent
+* Clean and preprocess raw data
+* Generate KPIs (revenue, volume, margin)
+* Trend extraction (daily, weekly, monthly, quarterly)
+* Regional comparison (Dhaka vs Chattogram vs Khulna etc.)
+* Product/category-level summaries
+* Customer segmentation analysis
+* Channel-based performance (Retail, Wholesale, Modern Trade)
 
 ---
 
-### **Outputs**
+## 🔍 **Internal Logic**
 
-JSON containing:
+* Uses **Pandas** for groupby operations
+* Performs **rolling averages** for smoothed trends
+* Detects top/bottom performers using rank functions
+* Handles missing or inconsistent data
+* Normalizes numeric fields (min-max)
+
+---
+
+## 🔢 **Output Format**
 
 ```json
 {
-  "summary": "...",
-  "top_performers": {...},
-  "low_performers": {...},
-  "regional_breakdown": {...},
-  "channel_breakdown": {...},
-  "insights": [...]
+  "kpis": {...},
+  "top_products": [...],
+  "bottom_regions": [...],
+  "channel_summary": {...},
+  "timeline_trends": [...],
+  "raw_summary_text": "..."
 }
 ```
 
 ---
 
-### **Tools Used**
+## 🧪 **Examples of Questions Routed to This Agent**
 
-* Pandas
-* NumPy
-* Internal metrics calculator
-
----
-
-### **Example Queries**
-
-* “Show sales in Dhaka division last month”
-* “Top performing product categories this quarter”
-* “Give me overall sales summary”
+* “Show sales performance for last quarter”
+* “Top 5 channels last month”
+* "Give me summary of product category A"
 
 ---
 
 ---
 
-# 🧠 **2. Diagnostic Analytics Agent**
+# 2️⃣ **Diagnostic Analytics Agent (Stage 2)**
 
-### **“Why did it happen?”**
+### 🏷 **Question:** *“Why did it happen?”*
 
----
-
-### **Purpose**
-
-Identifies factors influencing sales performance, including:
-
-* Underperforming products/regions
-* Market behavior
-* Correlations between variables
-* Operational bottlenecks
-* Seasonal impacts
+### 🎯 **Goal:** Uncover root causes behind trends.
 
 ---
 
-### **Responsibilities**
+## ✅ **Responsibilities**
 
-* Compare performance vs expected trends
-* Find root causes behind revenue decline/growth
-* Analyze anomalies
-* Attribute sales changes to specific factors
-* Provide cause-effect reasoning
-
----
-
-### **Inputs**
-
-* Descriptive agent output
-* User query context
-* Relevant filtered dataset
+* Drill down into anomalies detected by the descriptive agent
+* Compare metrics with historical baselines
+* Identify region/product/channel bottlenecks
+* Perform correlation analysis
+* Generate causal reasoning using LLM
+* Detect seasonality or demand shocks (festivals, weather, market events)
 
 ---
 
-### **Outputs**
+## 🔍 **Internal Logic**
 
-JSON containing:
+* Computes:
+
+  * **Δ (%) change month-over-month**
+  * **Z-score** to detect anomalies
+  * **Correlation matrices** (Pearson/Spearman)
+* Runs **LLM causal reasoning** over its findings
+* Links cause → effect → business impact
+
+---
+
+## 🔢 **Output Format**
 
 ```json
 {
-  "root_causes": [...],
-  "performance_gaps": {...},
-  "unexpected_trends": [...],
-  "explanations": "..."
+  "causes": [...],
+  "correlations": {...},
+  "anomaly_explanations": [...],
+  "business_reasoning": "..."
 }
 ```
 
 ---
 
-### **Tools Used**
+## 🧪 **Examples**
 
-* Correlation engine
-* Trend deviation detector
-* Agent reasoning prompts
-
----
-
-### **Example Queries**
-
-* “Why did Rajshahi region decline in September?”
-* “Why did channel sales drop in modern trade?”
-* “What caused spike in category A revenue?”
+* “Why sales dropped in Rajshahi division?”
+* “Why did SKU-104 spike suddenly?”
+* “Why Modern Trade underperformed this period?”
 
 ---
 
 ---
 
-# 🔮 **3. Predictive Analytics Agent**
+# 3️⃣ **Predictive Analytics Agent (Stage 3)**
 
-### **“What is likely to happen?”**
+### 🏷 **Question:** *“What will happen?”*
 
----
-
-### **Purpose**
-
-Forecasts future performance using:
-
-* Historical patterns
-* Seasonality
-* Trend projections
-* LLM-assisted predictive reasoning
+### 🎯 **Goal:** Forecast near-term and long-term outcomes.
 
 ---
 
-### **Responsibilities**
+## ✅ **Responsibilities**
 
-* Forecast revenue for next month/quarter
-* Predict best/worst performing products
-* Identify early warning signals
-* Estimate growth or decline
-
----
-
-### **Inputs**
-
-* Descriptive agent metrics
-* Filtered data
-* Forecast horizon from user
+* Short-term sales forecasting (7-day, 30-day)
+* Seasonal trend prediction
+* Future top/bottom products
+* Market opportunity identification
+* Customer churn prediction (if modeled)
 
 ---
 
-### **Outputs**
+## 🔍 **Internal Logic**
 
-JSON format:
+* Uses:
+
+  * Linear regression
+  * Moving averages
+  * Seasonal index
+  * LLM-based pattern projection
+* Applies **Holt-Winters** when time-series patterns detected
+* Estimates **confidence score (0-1)**
+
+---
+
+## 🔢 **Output Format**
 
 ```json
 {
-  "forecast_summary": "...",
-  "predicted_growth": {...},
-  "declining_segments": [...],
-  "future_opportunities": [...],
-  "confidence_level": "high|medium|low"
+  "forecast": {...},
+  "growth_opportunities": [...],
+  "risk_segments": [...],
+  "future_trends_text": "..."
 }
 ```
 
 ---
 
-### **Tools Used**
+## 🧪 **Example Queries**
 
-* Statistical trend model (moving avg, seasonal index)
-* LLM forecasting logic
-* Pattern recognition scripts
-
----
-
-### **Example Queries**
-
-* “Predict next quarter sales in Chattogram”
-* “What will happen to category B next month?”
-* “Show forecast for top 5 SKUs”
+* “Predict next month revenue for Dhaka region”
+* “What will happen to category B this quarter?”
+* “Forecast sales for top customers”
 
 ---
 
 ---
 
-# 🎯 **4. Prescriptive Analytics Agent**
+# 4️⃣ **Prescriptive Analytics Agent (Stage 4)**
 
-### **“What actions should be taken?”**
+### 🏷 **Question:** *“What should we do now?”*
 
----
-
-### **Purpose**
-
-Converts analytical insights into:
-
-* Strategic recommendations
-* Immediate actions
-* Resource allocation decisions
-* Sales improvement techniques
+### 🎯 **Goal:** Provide actionable, strategic recommendations.
 
 ---
 
-### **Responsibilities**
+## ✅ **Responsibilities**
 
-* Recommend actionable sales strategy
-* Prioritize actions by impact level
-* Suggest targeted interventions
-* Create business rules for automation
-* Produce n8n workflow payload
+* Convert diagnostic + predictive insights into actions
+* Build strategies like:
 
----
+  * Discount optimization
+  * Supply chain adjustment
+  * Sales team reinforcement
+  * Stock reallocation
+* Prioritize actions by:
 
-### **Inputs**
-
-* Descriptive output
-* Diagnostic insights
-* Predictive forecast
-* Business conditions
+  * Impact
+  * Urgency
+  * Effort
 
 ---
 
-### **Outputs**
+## 🔍 **Internal Logic**
 
-### **A. Human-readable Recommendations**
+* Uses:
+
+  * Decision trees
+  * Priority scoring matrix
+  * LLM-based reasoning
+* Generates **SMART actions**:
+
+  * S → Specific
+  * M → Measurable
+  * A → Achievable
+  * R → Relevant
+  * T → Time-bound
+
+---
+
+## 🔢 **Output (Human + Machine Combined)**
 
 ```json
 {
-  "action_items": [...],
-  "priority": "critical | high | medium | low",
-  "expected_impact": "..."
-}
-```
-
-### **B. n8n Automation Payload**
-
-```json
-{
-  "workflow_trigger": true,
-  "alert_level": "critical",
-  "assigned_team": "Sales Regional Manager",
-  "actions": [...]
+  "priority_actions": [...],
+  "impact_score": "high",
+  "business_plan": "...",
+  "n8n_payload": {...}
 }
 ```
 
 ---
 
-### **Tools Used**
+## 🧪 **Example Queries**
 
-* LLM action formulation
-* Weighted priority scoring
-* n8n workflow schema generator
-
----
-
-### **Example Queries**
-
-* “What actions should we take to boost Dhaka region sales?”
-* “Recommend strategies for low performance SKUs”
-* “Give me a plan to improve modern trade channel revenue”
+* “How do we improve sales in Chattogram?”
+* “What actions should be taken for low-performing SKUs?”
+* “Give me action items based on forecast.”
 
 ---
 
 ---
 
-# 🤖 **5. Chatbot Agent (Operational)**
+# 🔧 **Operational Agents**
 
-### **“Conversational interface for all insights”**
-
----
-
-### **Purpose**
-
-Serves as the front-end assistant that:
-
-* Receives user queries
-* Identifies intent
-* Decides which agent(s) to trigger
-* Combines multi-agent outputs into final response
+These are not analytical agents but **control and automation agents**.
 
 ---
 
-### **Responsibilities**
+# 🗣️ **Chatbot Agent (Ops)**
 
-* Query parsing
-* Intent classification
-* Agent orchestration
-* Streaming responses
-* Dynamic filtering (region, product, segment)
+### 🎯 **Goal:** Natural language interface to the entire system.
 
----
+## Responsibilities
 
-### **Inputs**
-
-* User text input
-* Optional filters from dashboard
+* Understand user query
+* Map query → correct agent(s)
+* Chain multi-agent calls
+* Generate a combined response
+* Provide follow-up questions
 
 ---
 
-### **Outputs**
+# ⚙️ **n8n Workflow Builder Agent (Ops)**
 
-* Natural language replies
-* Structured summaries
-* Visual-ready data
+### 🎯 **Goal:** Turn insights into automated workflow triggers.
 
----
+## Responsibilities
 
----
-
-# ⚙️ **6. n8n Workflow Builder Agent (Operational)**
-
-### **“Automation trigger and workflow generator”**
+* Build actionable JSON payloads
+* Trigger n8n webhooks
+* Assign tasks to teams
+* Send alerts (critical / high / medium)
+* Automate repetitive decision loops
 
 ---
 
-### **Purpose**
+# 🔄 **Full Interaction Example**
 
-Builds n8n-compatible automation flows using Prescriptive output.
+User asks:
 
----
+> “Why did Chattogram sales drop and what should we do?”
 
-### **Responsibilities**
+**Flow:**
 
-* Validate JSON structure
-* Assign workflow severity
-* Build webhook payload
-* Trigger actual n8n workflows
-
----
-
-### **Inputs**
-
-* Prescriptive agent output
+1. Chatbot Agent → determines MULTI-AGENT query
+2. Descriptive → fetches Chattogram summary
+3. Diagnostic → finds drop causes
+4. Predictive → forecasts future impact
+5. Prescriptive → generates actions + n8n trigger
+6. Chatbot → returns unified answer
 
 ---
-
-### **Outputs**
-
-```json
-{
-  "n8n_workflow": {
-    "trigger": "webhook",
-    "alert_level": "critical",
-    "actions": [...],
-    "assigned_to": "..."
-  }
-}
-```
-
----
-
-# 🔗 **Inter-Agent Communication Protocol**
-
-Each agent communicates via a **shared context object**, enabling:
-
-* Data passing between analytical stages
-* Causality linking (what → why → future → action)
-* Structured JSON standardization
-* Controller-agent managed execution
-
----
-
-# 🧩 **Summary**
-
-This specification defines all agents required by the **AI Agent & Agentic Intelligence Specialist** role:
-
-| Stage | Agent Name                   | Task                  |
-| ----- | ---------------------------- | --------------------- |
-| 1     | Descriptive Analytics Agent  | What happened?        |
-| 2     | Diagnostic Analytics Agent   | Why it happened?      |
-| 3     | Predictive Analytics Agent   | What will happen?     |
-| 4     | Prescriptive Analytics Agent | What to do?           |
-| Ops   | Chatbot Agent                | Conversational engine |
-| Ops   | n8n Workflow Builder Agent   | Automation engine     |
-
---- 
+ 
