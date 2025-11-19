@@ -1,6 +1,6 @@
 # AkSalesAgIntIntel: Multi-Agent Sales Intelligence System
 
-**GitHub Repository:** https://github.com/matinict/AkSalesAgIntIntel
+ 
 
 [![Python](https://img.shields.io/badge/Language-Python%203.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Framework](https://img.shields.io/badge/Framework-LangChain-04C4A4?logo=chainlink)](https://www.langchain.com/)
@@ -16,10 +16,47 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 
 | Artifact | File/Content | Access Link |
 |---------|--------------|-------------|
-| **Complete Project Package** | All source code + documentation | https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view |
+| **GitHub Repository** | All Updated source code + documentation | https://github.com/matinict/AkSalesAgIntIntel |
+| **Complete Project Package** | All source code  | https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view |
 | **Video Walkthrough** | Full demo | https://youtu.be/ahtN0UOX_vQ |
 | **Core Agent Logic** | `sales_agents.py` | [sales_agents.py](sales_agents.py) |
 | **Interactive Prototype UI** | `chatbot_ui.py` | [chatbot_ui.py](chatbot_ui.py) |
+
+---
+
+
+## 📦 System Architecture
+    ┌─────────────────────────────────────────────────────────────────┐
+    │                    MULTI-AGENT SYSTEM ARCHITECTURE               │
+    ├─────────────────────────────────────────────────────────────────┤
+    │                                                                  │
+    │  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐       │
+    │  │   Agent 1    │   │   Agent 2    │   │   Agent 3    │       │
+    │  │ Descriptive  │──▶│  Diagnostic  │──▶│  Predictive  │       │
+    │  └──────────────┘   └──────────────┘   └──────────────┘       │
+    │         │                   │                   │               │
+    │         └───────────────────┴───────────────────┘               │
+    │                             │                                   │
+    │                             ▼                                   │
+    │                    ┌──────────────┐                            │
+    │                    │   Agent 4    │                            │
+    │                    │ Prescriptive │                            │
+    │                    └──────────────┘                            │
+    │                             │                                   │
+    │         ┌───────────────────┴───────────────────┐              │
+    │         │                                       │              │
+    │         ▼                                       ▼              │
+    │  ┌──────────────┐                      ┌──────────────┐       │
+    │  │   Chatbot    │                      │ n8n Workflow │       │
+    │  │  Interface   │                      │  Generator   │       │
+    │  └──────────────┘                      └──────────────┘       │
+    │         │                                       │              │
+    │         ▼                                       ▼              │
+    │  ┌──────────────────────────────────────────────────┐        │
+    │  │          Streamlit Dashboard UI                  │        │
+    │  │  (Interactive Visualizations & Analytics)        │        │
+    │  └──────────────────────────────────────────────────┘        │
+    └─────────────────────────────────────────────────────────────────┘ 
 
 ---
 
@@ -55,7 +92,7 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 
 | Document | Path | Description |
 |----------|------|-------------|
-| **README.md** | [README.md](README.md) | Summary documentation |
+| **README** | [README.md](README.md) | Summary documentation |
 | **System Architecture** | [docs/architecture.md](docs/architecture.md) | Multi-agent + LangChain workflow architecture |
 | **Agent Specifications** | [docs/agent_specifications.md](docs/agent_specifications.md) | Roles, prompts, tools |
 | **Deployment Guide** | [docs/deployment_guide.md](docs/deployment_guide.md) | Local/cloud deployment |
@@ -85,3 +122,4 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 ```bash
 git clone https://github.com/matinict/AkSalesAgIntIntel.git
 cd AkSalesAgIntIntel
+```
