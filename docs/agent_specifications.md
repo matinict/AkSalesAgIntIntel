@@ -12,7 +12,7 @@ It contains:
 
 ---
 
-# 🧠 **Agent Specifications – AkSalesAgIntIntel**
+# 🧠 **Agent Specifications – AkSalesAgentIntelligence**
 
 This document describes the roles, responsibilities, logic, tools, and interaction flow for each agent in the **Akij Resource Multi-Agent Sales Intelligence System**.
 

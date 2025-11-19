@@ -114,12 +114,117 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 - Structured JSON output for automation  
 
 ---
+ 
 
-## 🛠️ Setup and Execution
+# 🛠️ **Setup & Execution Guide**
 
-### 1. Clone the Repository
+Follow the steps below to run the **AkSalesAgIntIntel – Multi-Agent Sales Intelligence System** on your local machine.
+
+---
+
+## **1️⃣ Clone the Repository**
 
 ```bash
 git clone https://github.com/matinict/AkSalesAgIntIntel.git
 cd AkSalesAgIntIntel
 ```
+
+---
+
+## **2️⃣ Create & Activate Virtual Environment**
+
+```bash
+python3 -m venv sales-env
+source sales-env/bin/activate
+```
+
+> 💡 **Note:** Ensure Python 3.10+ is installed.
+
+---
+
+## **3️⃣ Install Required Dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## **4️⃣ Run the Analytical Engine**
+
+You can run the analytical logic in three different modes:
+
+### **A. Jupyter Notebook (Recommended for Reviewers)**
+
+```bash
+jupyter notebook
+```
+
+Then open:
+
+```
+sales_agents.ipynb
+```
+
+> 👉 Click **Run All** inside Jupyter Notebook to execute the entire analytical pipeline.
+
+---
+
+### **B. Full Python Script (Complete Multi-Agent Logic)**
+
+```bash
+python3 sales_agents.py
+```
+
+---
+
+### **C. Minimal Version (Lightweight Execution)**
+
+```bash
+python3 sales_agents_min.py
+```
+
+---
+
+## **5️⃣ Launch the Chatbot Interface & Dashboard**
+
+The UI combines:
+
+* Chat-based assistant
+* Insights visualizations
+* KPI dashboard
+
+Run the Streamlit app:
+
+```bash
+streamlit run chatbot_ui.py
+```
+
+Once it starts, open the interface:
+
+👉 **[http://localhost:8501/](http://localhost:8501/)**
+
+---
+
+## **6️⃣ Load Dataset & Enable Interactive Tools**
+
+Inside the Streamlit sidebar:
+
+### ✔ Click **“Refresh Data”**
+
+Loads: `akij_sales_data_complete.csv`
+
+### ✔ Select Features to Activate:
+
+* **Chat Assistant**
+* **Dashboard**
+* **Analytics Insights**
+
+This will unlock:
+
+* Multi-Agent query processing
+* Trends, KPIs, charts
+* Region/Product/Channel explorations
+* Automated prescriptive recommendations
+
+--- 
