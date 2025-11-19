@@ -27,21 +27,21 @@ This section outlines the key deliverables of the submission, including the code
 
 ### 📖 Project Structure
 
-AkSalesAgIntIntel/
-│
-├── [README.md](README.md)                          # Complete documentation
-├── [sales_agents.py](sales_agents.py)              # Core: Multi-agent system
-├── [chatbot_ui.py](chatbot_ui.py)                  # Streamlit conversational interface
-├── [akij_sales_data_complete.csv](akij_sales_data_complete.csv)   # Sales dataset
-├── [n8n_akij_payload_*.json](n8n_akij_payload_*.json)             # n8n AI payload
-├── [n8n_akij_workflow_*.json](n8n_akij_workflow_*.json)           # n8n workflow
-│
-├── [requirements.txt](requirements.txt)            # Python dependencies
-├── [.env.example](.env.example)                    # Environment config template
-└── docs/
-    ├── [architecture.md](docs/architecture.md)     # System architecture details
-    ├── [agent_specifications.md](docs/agent_specifications.md)    # Agent capabilities
-    └── [deployment_guide.md](docs/deployment_guide.md)            # Deployment guide
+    AkSalesAgIntIntel/
+    │
+    ├── [README.md](README.md)                          # Complete documentation
+    ├── [sales_agents.py](sales_agents.py)              # Core: Multi-agent system
+    ├── [chatbot_ui.py](chatbot_ui.py)                  # Streamlit conversational interface
+    ├── [akij_sales_data_complete.csv](akij_sales_data_complete.csv)   # Sales dataset
+    ├── [n8n_akij_payload_*.json](n8n_akij_payload_*.json)             # n8n AI payload
+    ├── [n8n_akij_workflow_*.json](n8n_akij_workflow_*.json)           # n8n workflow
+    │
+    ├── [requirements.txt](requirements.txt)            # Python dependencies
+    ├── [.env.example](.env.example)                    # Environment config template
+    └── docs/
+        ├── [architecture.md](docs/architecture.md)     # System architecture details
+        ├── [agent_specifications.md](docs/agent_specifications.md)    # Agent capabilities
+        └── [deployment_guide.md](docs/deployment_guide.md)            # Deployment guide
 
 
 ### 📖 Project Documentation
