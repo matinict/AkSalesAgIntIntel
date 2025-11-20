@@ -1008,9 +1008,9 @@ if (window.location.protocol !== 'https:') {
 8. [CI/CD Pipeline Setup](#8-cicd-pipeline-setup)
 9. [Monitoring & Maintenance](#9-monitoring--maintenance)
 
-## 9. Monitoring & Maintenance
+#### 9. Monitoring & Maintenance
 
-# 🛡️ **9. Monitoring & Maintenance**
+## 🛡️ **9. Monitoring & Maintenance**
 
 A production AI system requires continuous observability, performance tracking, and automated alerts.
 This project uses a **3-layer monitoring approach**:
