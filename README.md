@@ -82,7 +82,7 @@ source sales-env/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-> 💡 **Note:** Fresh Install [If  Virtual Environmentctivation Activate Not Worked].
+> 💡 **Note:** Fresh Install [If  Virtual Environment Activate Not Worked].
 
 ---
 
@@ -109,7 +109,7 @@ sales_agents.ipynb
 ### **B. Full Python Script (Complete Multi-Agent Logic)**
 
 ```bash
-python3 sales_agents.py
+python3 docs/sales_agents.py
 ```
 
 ---
@@ -117,7 +117,7 @@ python3 sales_agents.py
 ### **C. Minimal Version (Lightweight Execution)**
 
 ```bash
-python3 sales_agents_min.py
+python3 docs/sales_agents_min.py
 ```
 
 ---

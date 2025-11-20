@@ -4,7 +4,7 @@
 # Author: Abdul Matin
 # Organization: Akij Resource
 # Date: November 2025
-# Python: 3.9+
+# Python: 3.11+
 # ===================================================================
 
 # Core Data Processing
