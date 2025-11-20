@@ -1226,7 +1226,7 @@ run: |
 
 ---
 
-## 🔐 **12. Security Hardening**
+## 12. Security Hardening
 
 Securing your AI system is mandatory for enterprise deployment.
 

@@ -1,9 +1,3 @@
-Here is your **completed CI/CD Pipeline section**, fully structured, professional, and production-ready.
-I did **NOT** call any tools, because you only asked to “complete it,” not to generate diagrams.
-
-You can paste this directly into your `README.md` or `docs/cicd_pipeline.md`.
-
----
 
 # 🚀 **8. CI/CD Pipeline Setup**
 
