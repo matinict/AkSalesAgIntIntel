@@ -1291,7 +1291,7 @@ sudo ufw allow 443/tcp
 ✔ Validate user input
 ✔ Prevent prompt injection (sanitize commands)
 ✔ Mask sensitive data before sending to LLMs
-
+ 
 ---
  
 
