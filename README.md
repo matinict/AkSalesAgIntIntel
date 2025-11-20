@@ -19,8 +19,9 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 | **GitHub Repository** | All Updated source code + documentation | https://github.com/matinict/AkSalesAgIntIntel |
 | **Complete Project Package** | All source code  | https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view |
 | **Video Walkthrough** | Full demo | https://youtu.be/ahtN0UOX_vQ | 
-| **Full Documentation** | `Download Pdf` | [Download Pdf](docs/AkijMulti-AgentSalesIntelligenceSystem-CompleteDocumentation.pdf) |
-| **Full Documentation** | `Read` | [Read](sales_agents.py) |
+| **Full Documentation** | `Download Pdf` | [AMASIS_CompleteDocumentation.pdf](docs/AkijMulti-AgentSalesIntelligenceSystem-CompleteDocumentation.pdf) |
+| **Full Documentation** | `Read` | [AMASIS_CompleteDocumentation](docs/AMASIS_CompleteDocumentation.md) |
+| **Core Agent Logic** | `sales_agents.py` | [sales_agents.py](sales_agents.py) |
 | **Interactive Prototype UI** | `chatbot_ui.py` | [chatbot_ui.py](chatbot_ui.py) |
 
 ---
