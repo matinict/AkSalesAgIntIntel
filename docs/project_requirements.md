@@ -1,8 +1,6 @@
-Here is an improved, clearer, more professional, and recruiter-ready version of your project brief. I tightened the structure, clarified expectations, and made the requirements more directive and impressive.
 
----
 
-# **Project Brief: Multi-Agent Sales Intelligence System (Revised & Improved)**
+# **Project Brief: Multi-Agent Sales Intelligence System **
 
 ## **1. Project Objective**
 
