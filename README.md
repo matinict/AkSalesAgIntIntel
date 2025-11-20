@@ -21,7 +21,7 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 | **Video Walkthrough** | Full demo | [Youtube](https://youtu.be/ahtN0UOX_vQ) | 
 | **Full Documentation** | `Download Pdf` | [AMASIS.pdf](docs/AkijMulti-AgentSalesIntelligenceSystem-CompleteDocumentation.pdf) |
 | **Full Documentation** | `Updated documentation` | [AMASIS](docs/AMASIS_CompleteDocumentation.md) |
-| **Core Agent Logic** | `sales_agents` | [ipynb](sales_agents.ipynb) [.py](docs/sales_agents.ipynb)|
+| **Core Agent Logic** | `sales_agents` | [.ipynb Format](sales_agents.ipynb) [.py Format](docs/sales_agents.ipynb)|
 | **Interactive Prototype UI** | `chatbot_ui.py` | [chatbot_ui](chatbot_ui.py) |
 
 ---
