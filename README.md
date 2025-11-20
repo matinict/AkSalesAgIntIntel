@@ -18,8 +18,9 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 |---------|--------------|-------------|
 | **GitHub Repository** | All Updated source code + documentation | https://github.com/matinict/AkSalesAgIntIntel |
 | **Complete Project Package** | All source code  | https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view |
-| **Video Walkthrough** | Full demo | https://youtu.be/ahtN0UOX_vQ |
-| **Core Agent Logic** | `sales_agents.py` | [sales_agents.py](sales_agents.py) |
+| **Video Walkthrough** | Full demo | https://youtu.be/ahtN0UOX_vQ | 
+| **Full Documentation** | `Download Pdf` | [Download Pdf](docs/AkijMulti-AgentSalesIntelligenceSystem-CompleteDocumentation.pdf) |
+| **Full Documentation** | `Read` | [Read](sales_agents.py) |
 | **Interactive Prototype UI** | `chatbot_ui.py` | [chatbot_ui.py](chatbot_ui.py) |
 
 ---
@@ -46,19 +47,7 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
  
 ---
 
-## 📖 Project Documentation
-
-| Document | Path | Description |
-|----------|------|-------------|
-| **Requirements** | [Goal and Context](docs/project_requirements.md) | Summary documentation |
-| **README** | [README.md](README.md) | Summary documentation |
-| **Sales Agents** | [sales_agents.ipynb](sales_agents.ipynb) | Core: Multi-agent system (Jupyter Notebook) |
-| **Chatbot Ui** | [chatbot_ui.py](chatbot_ui.py) | Streamlit conversational interface |
-| **System Architecture** | [docs/architecture.md](docs/architecture.md) | Multi-agent + LangChain workflow architecture |
-| **Agent Specifications** | [docs/agent_specifications.md](docs/agent_specifications.md) | Roles, prompts, tools |
-| **Deployment Guide** | [docs/deployment_guide.md](docs/deployment_guide.md) | Local/cloud deployment |
-
----
+ 
 
 
 # 🛠️ **Setup & Execution Guide**
