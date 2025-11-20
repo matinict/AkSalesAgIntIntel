@@ -29,7 +29,7 @@ The system consists of four analytical agents and two operational agents, design
 │   ┌──────────────┐     ┌──────────────┐     ┌──────────────┐                 │
 │   │   Agent 1    │     │   Agent 2    │     │   Agent 3    │                 │
 │   │ Descriptive  │ ───▶│ Diagnostic   │ ───▶│ Predictive   │                 │
-│   │ (What happened?)│  │ (Why happened?)│   │ (What will    │                 │
+│   │ (What happened?)│  │ (Why happened?)│   │ (What will    │                │
 │   └──────────────┘     └──────────────┘     │ happen?)      │                │
 │                                              └──────────────┘                │
 │            │                     │                     │                     │
