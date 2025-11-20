@@ -50,6 +50,7 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 
 | Document | Path | Description |
 |----------|------|-------------|
+| **Requirements** | [Goal and Context](docs/project_requirements.md) | Summary documentation |
 | **README** | [README.md](README.md) | Summary documentation |
 | **Sales Agents** | [sales_agents.ipynb](sales_agents.ipynb) | Core: Multi-agent system (Jupyter Notebook) |
 | **Chatbot Ui** | [chatbot_ui.py](chatbot_ui.py) | Streamlit conversational interface |
