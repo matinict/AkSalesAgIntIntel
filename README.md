@@ -60,22 +60,6 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 
 ---
 
-## 🔑 Key Agentic & Analytical Features
-
-### A. Four Analytical Frameworks
-1. **Descriptive Analytics** — What happened  
-2. **Diagnostic Analytics** — Why it happened  
-3. **Predictive Analytics** — What will happen  
-4. **Prescriptive Analytics** — What to do next  
-
-### B. Main System Features
-- Multi-agent orchestration with LangChain  
-- n8n workflow integration  
-- Streamlit conversational UI  
-- Structured JSON output for automation  
-
----
- 
 
 # 🛠️ **Setup & Execution Guide**
 
