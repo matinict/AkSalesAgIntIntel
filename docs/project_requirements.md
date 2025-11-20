@@ -1,71 +1,97 @@
+Here is an improved, clearer, more professional, and recruiter-ready version of your project brief. I tightened the structure, clarified expectations, and made the requirements more directive and impressive.
+
+---
+
+# **Project Brief: Multi-Agent Sales Intelligence System (Revised & Improved)**
+
+## **1. Project Objective**
+
+Develop a next-generation **Multi-Agent Sales Intelligence System** that demonstrates advanced capabilities in **AI Agents**, **Agentic Intelligence**, and **data-driven decision automation**.
+The system must use **Sales Data** as its core domain and support Akij Resource’s digital transformation by delivering insights, predictions, and intelligent actions.
+
+---
+
+## **2. Core Functional Requirements**
+
+### **2.1 Data Scope**
+
+The entire solution must revolve around a structured **sales dataset** and implement analysis across multiple hierarchical dimensions.
+
+**Mandatory Analysis Dimensions (examples):**
+
+* Product Category
+* Customer Segment
+* Region
+* Sales Channel
+* (Optional) Time Hierarchy, Salesperson Performance, Sub-Category, etc.
+
+### **2.2 Analytical Intelligence Requirements (Four Pillars)**
+
+Your multi-agent system must explicitly implement the following analytical stages and be capable of transitioning between them intelligently:
+
+1. **Descriptive Analytics — “What happened?”**
+
+   * KPIs, historical trends, comparisons.
+
+2. **Diagnostic Analytics — “Why did it happen?”**
+
+   * Root cause analysis, factor attribution, segment-level investigation.
+
+3. **Predictive Analytics — “What will likely happen?”**
+
+   * Forecasting, probability-based projections, expected risk/opportunity.
+
+4. **Prescriptive Analytics — “What should we do next?”**
+
+   * Concrete actions, strategic recommendations, operational playbooks.
+
+---
+
+## **3. Technical Requirements: Agentic Intelligence Architecture**
+
+The project must demonstrate modern **agentic automation** using the tools listed below.
+
+### **3.1 Mandatory Tools & Frameworks**
+
+| Tool / Framework             | Purpose                                                    | Requirement                                                                                                              |
+| ---------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **LangChain**                | LLM reasoning, prompt chaining, memory, and workflow logic | **Mandatory: Must be used** for at least one of these—prompt chains, reasoning loops, RAG, tools, or LLM orchestration   |
+| **n8n**                      | Workflow automation and integration                        | **Mandatory: Must show a workflow or trigger interaction** (e.g., pushing insights, generating alerts, triggering tasks) |
+| **Multi-Agent Architecture** | Specialized agents working collaboratively                 | **Mandatory: Must implement separate agents** for analytics, insight generation, and orchestration                       |
+
+### **3.2 Strong Value Add (Bonus Points)**
+
+A **chatbot/AI assistant interface** that can:
+
+* Receive natural language queries
+* Understand user intent
+* Trigger the appropriate analytical agent
+* Return insights or take automated action via n8n
+
+This component significantly strengthens your proposal.
+
+---
+
+## **4. Submission Requirements**
+
+### **4.1 Accepted Project Formats**
+
+You may submit the final system in **any one** of the following formats:
+
+* Jupyter Notebook
+* Python scripts/application
+* Power BI dashboard + underlying scripts
+* Interactive Prototype (e.g., Streamlit, Flask, FastAPI)
+
+Include **source code**, **documentation**, and **sample data** (synthetic or anonymized if needed).
+
+### **4.2 Timeline & Additional Documents**
+
+* **Submission Deadline:** **November 08, 2025**
+* **Additional Requirement:**
+  Include **two previous projects** demonstrating your hands-on experience with **AI Agents** or **Agentic Intelligence** (any tech stack).
+
+### **4.3 Further Clarifications**
+
+For any clarification about the brief, candidates should contact the designated Akij Resource representative.
  
-# Project Requirements: Multi-Agent Sales Intelligence System
-
-## 1. Project Goal and Context
-
-The primary goal of this project is to demonstrate exceptional capability in **AI Agent** and **Agentic Intelligence** development. The solution must be centered on the domain of **sales data** to contribute to Akij Resource's digital transformation journey through intelligent automation and applied AI.
-
-***
-
-## 2. Core Functional Requirements
-
-### 2.1 Data and Scope
-
-The solution must be built around a **sales dataset** and must incorporate analysis across **multiple hierarchical layers**.
-
-* **Primary Data Focus:** Sales Data.
-* **Mandatory Hierarchical Layers (Examples):**
-    * Product Category
-    * Customer Segment
-    * Region
-    * Sales Channel
-    * *Other relevant layers may be included.*
-
-### 2.2 Analytical Frameworks (Four Pillars)
-
-The solution must explicitly address and implement all four analytical frameworks. The multi-agent system should be capable of transitioning seamlessly between these stages in its reasoning process.
-
-1.  **Descriptive Analytics:** **What has happened?** (Reporting key metrics, historical trends.)
-2.  **Diagnostic Analytics:** **Why did it happen?** (Root cause analysis, identifying influencing factors.)
-3.  **Predictive Analytics:** **What is likely to happen?** (Forecasting, probabilistic outcomes.)
-4.  **Prescriptive Analytics:** **What actions should be taken?** (Generating concrete, actionable recommendations.)
-
-***
-
-## 3. Agentic Intelligence & Technical Implementation
-
-The project is required to develop a comprehensive case study showcasing **Agentic Intelligence** by leveraging modern tools and architectures.
-
-### 3.1 Mandatory Frameworks and Tools
-
-| Framework/Tool | Purpose | Requirement |
-| :--- | :--- | :--- |
-| **LangChain** | LLM-based reasoning and contextual intelligence. | Must be leveraged for structuring prompts, defining chains, or implementing reasoning loops. |
-| **n8n** | Orchestration and Workflow Automation. | Must demonstrate capability to interact with or generate payloads for an n8n workflow (e.g., to trigger a follow-up task or alert). |
-| **Multi-Agent Architecture** | Coordination and specialized task execution. | Must implement a multi-agent system for coordination between analytical and conversational agents. |
-
-### 3.2 Strong Value Addition
-
-* **Chatbot Interface / AI Assistant:** The inclusion of an interactive interface capable of interpreting natural language queries, responding with insights, and initiating actions based on those insights will be considered a **strong value addition**.
-
-***
-
-## 4. Submission Requirements
-
-### 4.1 Project Deliverable Format
-
-The project may be submitted in any suitable, functional format:
-
-* **Jupyter Notebook**
-* **Python** scripts/application
-* **Power BI dashboard** (with underlying data/code)
-* **Interactive Prototype** (e.g., Streamlit, Flask app)
-
-### 4.2 Timeline and Additional Documents
-
-* **Submission Deadline:** **November 08, 2025**.
-* **Previous Projects:** Submit **two** of your previously completed projects that explicitly demonstrate your experience with **AI Agent** and **Agentic Intelligence** frameworks.
-
-### 4.3 Clarification
-
-* Should any clarification regarding this brief be required, candidates are encouraged to reach out to the Akij Resource contact person.
