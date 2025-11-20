@@ -16,11 +16,11 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 
 | Artifact | File/Content | Access Link |
 |---------|--------------|-------------|
-| **GitHub Repository** | All Updated source code + documentation | https://github.com/matinict/AkSalesAgIntIntel |
-| **Complete Project Package** | All source code  | [Download From Drive] (https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view) |
+| **GitHub Repository** |[All Updated source code + documentation](https://github.com/matinict/AkSalesAgIntIntel)|
+| **Complete Project Package** | All source code  [Download From Drive](https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view) |
 | **Video Walkthrough** | Full demo | https://youtu.be/ahtN0UOX_vQ | 
-| **Full Documentation** | `Download Pdf` | [AMASIS_CompleteDocumentation.pdf](docs/AkijMulti-AgentSalesIntelligenceSystem-CompleteDocumentation.pdf) |
-| **Full Documentation** | `Read` | [AMASIS_CompleteDocumentation](docs/AMASIS_CompleteDocumentation.md) |
+| **Full Documentation** | `Download Pdf` | [AMASIS.pdf](docs/AkijMulti-AgentSalesIntelligenceSystem-CompleteDocumentation.pdf) |
+| **Full Documentation** | `Read` | [AMASIS](docs/AMASIS_CompleteDocumentation.md) |
 | **Core Agent Logic** | `sales_agents.ipynb` | [sales_agents](sales_agents.ipynb) |
 | **Interactive Prototype UI** | `chatbot_ui.py` | [chatbot_ui](chatbot_ui.py) |
 
