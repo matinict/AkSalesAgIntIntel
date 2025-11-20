@@ -1002,20 +1002,13 @@ if (window.location.protocol !== 'https:') {
 
 
     [CI/CD Pipeline] (docs/cicd_pipeline.md)
-
-
-
-
-Here you go Matin — **full professional documentation sections** for:
-
-✅ Monitoring & Maintenance
-✅ Troubleshooting
-✅ Rollback Procedures
-✅ Security Hardening
-
-These sections are designed for **enterprise-grade AI systems**, especially for your **AkSalesAgIntIntel** submission.
-
+ 
 ---
+
+8. [CI/CD Pipeline Setup](#8-cicd-pipeline-setup)
+9. [Monitoring & Maintenance](#9-monitoring--maintenance)
+
+## 9. Monitoring & Maintenance
 
 # 🛡️ **9. Monitoring & Maintenance**
 
