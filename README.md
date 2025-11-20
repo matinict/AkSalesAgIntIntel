@@ -17,12 +17,12 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 | Artifact | File/Content | Access Link |
 |---------|--------------|-------------|
 | **GitHub Repository** |All Updated source code + documentation | [Github](https://github.com/matinict/AkSalesAgIntIntel)|
-| **Complete Project Package** | All source code |  [Download From Drive](https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view) |
-| **Video Walkthrough** | Full demo | [Youtube](https://youtu.be/ahtN0UOX_vQ) | 
+| **Complete Project Package** | All source code |  [GDrive](https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view) |
+| **Video Walkthrough** | Full demo | [Youtube Video](https://youtu.be/ahtN0UOX_vQ) | 
 | **Full Documentation** | `Download Pdf` | [AMASIS.pdf](docs/AkijMulti-AgentSalesIntelligenceSystem-CompleteDocumentation.pdf) |
 | **Full Documentation** | `Updated documentation` | [AMASIS](docs/AMASIS_CompleteDocumentation.md) |
-| **Core Agent Logic** | `sales_agents` | [1.ipynb Format](sales_agents.ipynb) [2.py Format](docs/sales_agents.ipynb)|
-| **Interactive Prototype UI** | `chatbot_ui.py` | [chatbot_ui](chatbot_ui.py) |
+| **Core Agent Logic** | `sales_agents system` | [1.ipynb](sales_agents.ipynb) [2.py Format](docs/sales_agents.ipynb)|
+| **Interactive Prototype UI** | `chatbot_ui.py interface` | [chatbot_ui](chatbot_ui.py) |
 
 ---
 
@@ -82,6 +82,7 @@ source sales-env/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+> 💡 **Note:** Fresh Install [If  Virtual Environmentctivation Activate Not Worked].
 
 ---
 
