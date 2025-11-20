@@ -622,7 +622,7 @@ critical_actions = [
 
 ---
 
-## Agent 5 OPS- N8N Workflow Integration
+## Agent 5/OPS- N8N Workflow Integration
 
 ### 🔗 N8NWorkflowGenerator Class
 
@@ -764,7 +764,7 @@ generator.auto_generate()
 
 ---
 
-## Deployment Guide
+### n8n Deployment Guide
 
 ### 🚀 Production Deployment Checklist
 
@@ -809,7 +809,7 @@ curl http://localhost:8501/health  # Streamlit
 curl https://n8n.example.com/webhook/test  # n8n
 ```
 
-### 🖥️ Agent 6-OPS - Streamlit Dashboard
+### 🖥️ Agent 6/OPS - Streamlit Dashboard
 
 **Features:**
 - 💬 Natural language chatbot
