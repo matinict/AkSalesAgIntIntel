@@ -1004,13 +1004,9 @@ if (window.location.protocol !== 'https:') {
     [CI/CD Pipeline] (docs/cicd_pipeline.md)
  
 ---
+ 
 
-8. [CI/CD Pipeline Setup](#8-cicd-pipeline-setup)
-9. [Monitoring & Maintenance](#9-monitoring--maintenance)
-
-#### 9. Monitoring & Maintenance
-
-## 🛡️ **9. Monitoring & Maintenance**
+## 9. Monitoring & Maintenance 
 
 A production AI system requires continuous observability, performance tracking, and automated alerts.
 This project uses a **3-layer monitoring approach**:
@@ -1070,7 +1066,7 @@ Best practice: stream logs to **AWS CloudWatch Logs** or **ELK stack**.
 
 ---
 
-# 🛠️ **10. Troubleshooting Guide**
+## 10. Troubleshooting
 
 A practical guide for diagnosing the most common failures.
 
@@ -1178,7 +1174,7 @@ Settings → Secrets → Actions
 
 ---
 
-# 🔄 **11. Rollback Procedures**
+## 11. Rollback Procedures
 
 In case a deployment breaks production, **rollback instantly**.
 
@@ -1230,7 +1226,7 @@ run: |
 
 ---
 
-# 🔐 **12. Security Hardening (Production-Grade)**
+## 🔐 **12. Security Hardening**
 
 Securing your AI system is mandatory for enterprise deployment.
 
