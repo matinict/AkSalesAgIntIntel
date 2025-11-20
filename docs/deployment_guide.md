@@ -980,13 +980,26 @@ if (window.location.protocol !== 'https:') {
 """, height=0)
 ```
 
----
+ 
 
 ## 8. CI/CD Pipeline Setup
 
-### 8.1 GitHub Actions Workflow
+    This project includes a full GitHub Actions–based CI/CD pipeline that automates:
 
-**.github/workflows/deploy.yml:**
+    Code testing
+
+    Security scanning
+
+    Docker image build
+
+    Deployment to AWS EC2
+
+    Below is the complete and final configuration.
+
+# **8.1 GitHub Actions Workflow**
+
+File: **`.github/workflows/deploy.yml`**
+
 ```yaml
 name: Deploy to Production
 
@@ -1025,7 +1038,7 @@ jobs:
         run: |
           pytest tests/ --cov=. --cov-report=xml
       
-      - name: Upload coverage
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
           files: ./coverage.xml
@@ -1044,11 +1057,11 @@ jobs:
           pip install bandit
           bandit -r . -f json -o bandit-report.json
       
-      - name: Run Safety check
+      - name: Run Safety vulnerability scan
         run: |
           pip install safety
           safety check --json
-  
+
   build:
     name: Build Docker Image
     needs: [test, security]
@@ -1068,7 +1081,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
-      - name: Build and push
+      - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -1076,9 +1089,9 @@ jobs:
           tags: matinict/akij-sales-intelligence:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
-  
+
   deploy:
-    name: Deploy to Production
+    name: Deploy to Production (EC2)
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -1089,12 +1102,295 @@ jobs:
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY }} 
+          key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ubuntu/AkSalesAgIntIntel
             docker-compose pull
             docker-compose up -d
             docker system prune -f
-    ```
+```
+
+
+[CI/CD Pipeline](docs/cicd_pipeline.md)
+
+ 
+
+## 9. Monitoring & Maintenance 
+
+A production AI system requires continuous observability, performance tracking, and automated alerts.
+This project uses a **3-layer monitoring approach**:
+
+---
+
+## **9.1 Application Monitoring**
+
+### **Tools**
+
+* **Prometheus** – metrics collection
+* **Grafana Dashboard** – real-time visualization
+* **Streamlit logs** – API call latency, user activity
+* **Custom logs inside agents** – error tracking, agent performance
+
+### **Key Metrics to Monitor**
+
+| Component             | Metrics                                        |
+| --------------------- | ---------------------------------------------- |
+| LLM Usage             | Token usage, latency, failure rate             |
+| Agents                | Execution time, fallback triggers, error count |
+| Sales Data Processing | Load time, memory usage                        |
+| Streamlit UI          | Response latency, dashboard refresh stats      |
+| n8n Workflows         | Webhook triggers, failure rate                 |
+
+---
+
+## **9.2 Infrastructure Monitoring**
+
+### **Tools**
+
+* AWS CloudWatch (EC2 CPU, RAM, Disk, Network)
+* UptimeRobot (API uptime)
+* Docker health checks
+
+### **EC2 Health Checks**
+
+```bash
+docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+```
+
+---
+
+## **9.3 Log Management**
+
+Logs are captured as:
+
+```
+/logs/
+│── agents.log
+│── n8n_workflows.log
+│── chatbot.log
+└── errors.log
+```
+
+Best practice: stream logs to **AWS CloudWatch Logs** or **ELK stack**.
+
+---
+
+## 10. Troubleshooting
+
+A practical guide for diagnosing the most common failures.
+
+---
+
+## **10.1 Streamlit Dashboard Not Loading**
+
+### ❌ Issue:
+
+* Page stuck
+* "Cannot fetch data"
+
+### ✅ Fix:
+
+```bash
+docker logs sales-intel
+```
+
+Check CSV location: `akij_sales_data_complete.csv`
+Ensure file exists and has correct permissions.
+
+---
+
+## **10.2 Agents Not Returning Output**
+
+### Possible Causes:
+
+* Missing API keys
+* Data filters too restrictive
+* Pandas read failure
+
+### Fix:
+
+Check environment variables:
+
+```bash
+cat .env
+```
+
+Check agent logs:
+
+```bash
+cat logs/agents.log
+```
+
+---
+
+## **10.3 n8n Workflow Not Triggering**
+
+### Root Causes:
+
+* Incorrect webhook URL
+* Invalid JSON schema
+* n8n server offline
+
+### Fix:
+
+1. Validate generated payload:
+
+```bash
+python3 validate_payload.py
+```
+
+2. Check Webhook:
+
+```
+https://n8n.yourserver.com/webhook/akij-sales
+```
+
+---
+
+## **10.4 Docker Container Crashing**
+
+### Fix:
+
+```bash
+docker-compose down
+docker-compose up -d --build
+docker logs sales-intel
+```
+
+---
+
+## **10.5 CI/CD Pipeline Failing**
+
+### Common Reasons:
+
+* Syntax errors in YAML
+* Missing GitHub secrets
+* DockerHub authentication failure
+
+### Fix:
+
+Check YAML syntax:
+
+```yaml
+https://yamlchecker.com
+```
+
+Check secrets:
+
+```
+Settings → Secrets → Actions
+```
+
+---
+
+## 11. Rollback Procedures
+
+In case a deployment breaks production, **rollback instantly**.
+
+---
+
+## **11.1 Rollback to Previous Docker Image**
+
+```bash
+docker pull matinict/akij-sales-intelligence:stable
+docker tag matinict/akij-sales-intelligence:stable sales-intel
+docker-compose down
+docker-compose up -d
+```
+
+---
+
+## **11.2 Rollback Using Git Tags**
+
+### Step 1: List tags
+
+```bash
+git tag
+```
+
+### Step 2: Checkout stable tag
+
+```bash
+git checkout v1.2.0-stable
+```
+
+### Step 3: Redeploy
+
+```bash
+docker-compose up -d --build
+```
+
+---
+
+## **11.3 Automatic Rollback in CI/CD (Optional)**
+
+Add inside GitHub Actions:
+
+```yaml
+if: failure()
+run: |
+  docker pull matinict/akij-sales-intelligence:stable
+  docker-compose up -d
+```
+
+---
+
+## 12. Security Hardening
+
+Securing your AI system is mandatory for enterprise deployment.
+
+---
+
+## **12.1 Environment Security**
+
+✔ Disable storing API keys in code
+✔ Use `.env` + GitHub Secrets
+✔ Rotate keys every 90 days
+✔ Restrict keys with scope-based permissions
+
+---
+
+## **12.2 Server Security**
+
+### On EC2:
+
+```bash
+sudo ufw enable
+sudo ufw allow 22/tcp
+sudo ufw allow 8501/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+```
+
+✔ Disable password login
+✔ Only allow SSH key authentication
+
+---
+
+## **12.3 Docker Security**
+
+* Use non-root users inside containers
+* Enable Docker Content Trust
+* Keep base images lightweight & updated
+
+---
+
+## **12.4 Data Security**
+
+✔ Encrypt data at rest (AES-256)
+✔ Encrypt data in transit (HTTPS)
+✔ Hash sensitive IDs (SHA-256)
+
+---
+
+## **12.5 LLM Security (Critical)**
+
+✔ Rate limit queries
+✔ Validate user input
+✔ Prevent prompt injection (sanitize commands)
+✔ Mask sensitive data before sending to LLMs
+ 
+---
+ 
 
     
