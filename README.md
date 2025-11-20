@@ -30,7 +30,7 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
     AkSalesAgIntIntel/
     │
     ├── README.md                          # This file - Complete documentation
-    ├── sales_agents.py                    # Core: Multi-agent system (Jupyter Notebook)
+    ├── sales_agents.ipynb/.py             # Core: Multi-agent system (Jupyter Notebook)
     ├── chatbot_ui.py                      # Streamlit conversational interface
     ├── akij_sales_data_complete.csv       # Generated sales dataset (4000+ records)
     ├── n8n_akij_payload_*.json           # AI payload for n8n integration
@@ -43,14 +43,6 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
         ├── agent_specifications.md        # Individual agent capabilities
         └── deployment_guide.md            # Production deployment guide
 
-- [sales_agents.py](sales_agents.py) — Core multi-agent system  
-- [chatbot_ui.py](chatbot_ui.py) — Streamlit UI  
-- [akij_sales_data_complete.csv](akij_sales_data_complete.csv) — Sales dataset  
-- [n8n_akij_payload_*.json](n8n_akij_payload_*.json) — n8n payload  
-- [n8n_akij_workflow_*.json](n8n_akij_workflow_*.json) — n8n workflow  
-- [requirements.txt](requirements.txt)  
-- [.env.example](.env.example)  
-
  
 ---
 
@@ -58,7 +50,10 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 
 | Document | Path | Description |
 |----------|------|-------------|
+| **Requirements** | [Goal and Context](docs/project_requirements.md) | Summary documentation |
 | **README** | [README.md](README.md) | Summary documentation |
+| **Sales Agents** | [sales_agents.ipynb](sales_agents.ipynb) | Core: Multi-agent system (Jupyter Notebook) |
+| **Chatbot Ui** | [chatbot_ui.py](chatbot_ui.py) | Streamlit conversational interface |
 | **System Architecture** | [docs/architecture.md](docs/architecture.md) | Multi-agent + LangChain workflow architecture |
 | **Agent Specifications** | [docs/agent_specifications.md](docs/agent_specifications.md) | Roles, prompts, tools |
 | **Deployment Guide** | [docs/deployment_guide.md](docs/deployment_guide.md) | Local/cloud deployment |
