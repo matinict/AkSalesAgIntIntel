@@ -1,6 +1,6 @@
 
 
-# **Project Brief: Multi-Agent Sales Intelligence System **
+# Project Brief: Multi-Agent Sales Intelligence System 
 
 ## **1. Project Objective**
 
