@@ -1111,10 +1111,8 @@ jobs:
 ```
 
 
-    [CI/CD Pipeline] (docs/cicd_pipeline.md)
+[CI/CD Pipeline](docs/cicd_pipeline.md)
 
-[CI/CD Pipeline] (docs/cicd_pipeline.md)
- 
  
 
 ## 9. Monitoring & Maintenance 
