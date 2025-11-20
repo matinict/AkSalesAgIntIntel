@@ -29,7 +29,7 @@ The system consists of four analytical agents and two operational agents, design
 │   ┌──────────────┐     ┌──────────────┐     ┌──────────────┐                 │
 │   │   Agent 1    │     │   Agent 2    │     │   Agent 3    │                 │
 │   │ Descriptive  │ ───▶│ Diagnostic   │ ───▶│ Predictive   │                 │
-│   │ (What happened?)│  │ (Why happened?)│   │ (What will    │                 │
+│   │ (What happened?)│  │ (Why happened?)│   │ (What will    │                │
 │   └──────────────┘     └──────────────┘     │ happen?)      │                │
 │                                              └──────────────┘                │
 │            │                     │                     │                     │
@@ -45,14 +45,15 @@ The system consists of four analytical agents and two operational agents, design
 │       ┌─────────────────────────┴──────────────────────────┐                 │
 │       │                                                    │                 │
 │       ▼                                                    ▼                 │
-│   ┌─────────────────┐                          ┌────────────────────────┐    │
+│   ┌─────────────────┐                          ┌────────────────────────┐    |
+│   │   Agent 6-OPS   │                          │      Agent  5-OPS      │    |
 │   │  Chatbot Agent  │                          │ n8n Workflow Builder   │    │
 │   │ (Conversational)│                          │  (Automation Engine)   │    │
 │   └─────────────────┘                          └────────────────────────┘    │
 │       │                                                    │                 │
 │       ▼                                                    ▼                 │
 │   ┌───────────────────────────────────────────────────────────────────────┐  │
-│   │                       Streamlit Dashboard UI                          │  │
+│   │             Prototype Streamlit Dashboard UI                          │  │
 │   │            (Interactive Visualizations & Analytics)                   │  │
 │   └───────────────────────────────────────────────────────────────────────┘  │
 └──────────────────────────────────────────────────────────────────────────────┘
@@ -68,8 +69,8 @@ The system consists of four analytical agents and two operational agents, design
 | **2**   | **Diagnostic Analytics Agent**   | Why it happened?      |
 | **3**   | **Predictive Analytics Agent**   | What will happen?     |
 | **4**   | **Prescriptive Analytics Agent** | What to do?           |
-| **Ops** | **Chatbot Agent**                | Conversational engine |
-| **Ops** | **n8n Workflow Builder Agent**   | Automation engine     |
+| **5/Ops** | **n8n Workflow Builder Agent**   | Automation engine     |
+| **6/Ops** | **Chatbot Agent**                | Conversational engine |
 
 ---
  

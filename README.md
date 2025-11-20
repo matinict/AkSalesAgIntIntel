@@ -16,12 +16,13 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 
 | Artifact | File/Content | Access Link |
 |---------|--------------|-------------|
-| **GitHub Repository** | All Updated source code + documentation | https://github.com/matinict/AkSalesAgIntIntel |
-| **Complete Project Package** | All source code  | https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view |
-| **Video Walkthrough** | Full demo | https://youtu.be/ahtN0UOX_vQ | 
-| **Full Documentation** | `Download Pdf` | [Download Pdf](docs/AkijMulti-AgentSalesIntelligenceSystem-CompleteDocumentation.pdf) |
-| **Full Documentation** | `Read` | [Read](sales_agents.py) |
-| **Interactive Prototype UI** | `chatbot_ui.py` | [chatbot_ui.py](chatbot_ui.py) |
+| **GitHub Repository** |All Updated source code + documentation | [Github](https://github.com/matinict/AkSalesAgIntIntel)|
+| **Complete Project Package** | All source code |  [GDrive](https://drive.google.com/file/d/1-shjTXeVWoM2e8KS-MdWnHfvfMomhpCL/view) |
+| **Video Walkthrough** | Full demo | [Youtube Video](https://youtu.be/ahtN0UOX_vQ) | 
+| **Full Documentation** | `Download Pdf` | [AMASIS.pdf](docs/AkijMulti-AgentSalesIntelligenceSystem-CompleteDocumentation.pdf) |
+| **Full Documentation** | `Updated documentation` | [AMASIS](docs/AMASIS_CompleteDocumentation.md) |
+| **Core Agent Logic** | `sales_agents system` | [1.ipynb](sales_agents.ipynb) [2.py Format](docs/sales_agents.ipynb)|
+| **Interactive Prototype UI** | `chatbot_ui.py interface` | [chatbot_ui](chatbot_ui.py) |
 
 ---
 
@@ -30,12 +31,12 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
 ## 📖 Project Structure
     AkSalesAgIntIntel/
     │
-    ├── README.md                          # This file - Complete documentation
+    ├── README.md                          # Basic documentation
     ├── sales_agents.ipynb/.py             # Core: Multi-agent system (Jupyter Notebook)
     ├── chatbot_ui.py                      # Streamlit conversational interface
-    ├── akij_sales_data_complete.csv       # Generated sales dataset (4000+ records)
-    ├── n8n_akij_payload_*.json           # AI payload for n8n integration
-    ├── n8n_akij_workflow_*.json          # Importable n8n workflow
+    ├── akij_sales_data.csv       # Generated sales dataset (4000+ records)
+    ├── akij_payload_*.json           # AI payload for n8n integration
+    ├── akij_n8n_workflow*.json          # Importable n8n workflow
     │
     ├── requirements.txt                   # Python dependencies
     ├── .env.example                       # Environment configuration template
@@ -43,6 +44,7 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
         ├── architecture.md                # System architecture details
         ├── agent_specifications.md        # Individual agent capabilities
         └── deployment_guide.md            # Production deployment guide
+        └── AMASIS_CompleteDocumentation.md # Complete Documentation 
 
  
 ---
@@ -81,6 +83,7 @@ source sales-env/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+> 💡 **Note:** Fresh Install [If  Virtual Environment Activate Not Worked].
 
 ---
 
@@ -107,7 +110,7 @@ sales_agents.ipynb
 ### **B. Full Python Script (Complete Multi-Agent Logic)**
 
 ```bash
-python3 sales_agents.py
+python3 docs/sales_agents.py
 ```
 
 ---
@@ -115,7 +118,7 @@ python3 sales_agents.py
 ### **C. Minimal Version (Lightweight Execution)**
 
 ```bash
-python3 sales_agents_min.py
+python3 docs/sales_agents_min.py
 ```
 
 ---
