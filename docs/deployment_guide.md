@@ -1113,7 +1113,7 @@ jobs:
 
     [CI/CD Pipeline] (docs/cicd_pipeline.md)
 
-    [CI/CD Pipeline] (docs/cicd_pipeline.md)
+[CI/CD Pipeline] (docs/cicd_pipeline.md)
  
  
 
