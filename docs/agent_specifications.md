@@ -45,14 +45,15 @@ The system consists of four analytical agents and two operational agents, design
 │       ┌─────────────────────────┴──────────────────────────┐                 │
 │       │                                                    │                 │
 │       ▼                                                    ▼                 │
-│   ┌─────────────────┐                          ┌────────────────────────┐    │
+│   ┌─────────────────┐                          ┌────────────────────────┐    |
+│   │   Agent 6-OPS   │                          │      Agent  5-OPS      │    |
 │   │  Chatbot Agent  │                          │ n8n Workflow Builder   │    │
 │   │ (Conversational)│                          │  (Automation Engine)   │    │
 │   └─────────────────┘                          └────────────────────────┘    │
 │       │                                                    │                 │
 │       ▼                                                    ▼                 │
 │   ┌───────────────────────────────────────────────────────────────────────┐  │
-│   │                       Streamlit Dashboard UI                          │  │
+│   │             Prototype Streamlit Dashboard UI                          │  │
 │   │            (Interactive Visualizations & Analytics)                   │  │
 │   └───────────────────────────────────────────────────────────────────────┘  │
 └──────────────────────────────────────────────────────────────────────────────┘

@@ -89,7 +89,12 @@ Include **source code**, **documentation**, and **sample data** (synthetic or an
 * **Additional Requirement:**
   Include **two previous projects** demonstrating your hands-on experience with **AI Agents** or **Agentic Intelligence** (any tech stack).
 
-### **4.3 Further Clarifications**
+### **4.3 Data Requirements** 
+- No specific dataset or format is required.
+- You may use data from any reliable source, as long as it supports the objectives of the task.
+
+
+### **4.4 Further Clarifications**
 
 For any clarification about the brief, candidates should contact the designated Akij Resource representative.
  

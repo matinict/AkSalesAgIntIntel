@@ -109,9 +109,9 @@ if 'dashboard_section' not in st.session_state:
 # ----------------------------------------------------------------------
 def load_data() -> pd.DataFrame:
     """Load and cache sales data"""
-    file_path = "akij_sales_data_complete.csv"
+    file_path = "akij_sales_data.csv"
     if not os.path.exists(file_path):
-        st.error("Data file `akij_sales_data_complete.csv` not found. Please generate it first.")
+        st.error("Data file `akij_sales_data.csv` not found. Please generate it first.")
         return None
     try:
         df = pd.read_csv(file_path)
@@ -569,7 +569,7 @@ st.markdown(f"<p style='text-align:center; color:#888;'>Report Date: {datetime.n
 # Data Load Guard
 # ----------------------------------------------------------------------
 if not st.session_state.data_loaded or st.session_state.sales_data is None:
-    st.info("Click **'Refresh Data'** in the sidebar to load `akij_sales_data_complete.csv`.")
+    st.info("Click **'Refresh Data'** in the sidebar to load `akij_sales_data.csv`.")
     # Fix 17: Deprecation replacement (use_container_width=True -> width='stretch')
     if st.button("Refresh Data", width='stretch'): 
         with st.spinner("Loading data..."):
