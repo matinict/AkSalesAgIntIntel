@@ -288,7 +288,9 @@ def create_regional_analysis(data: pd.DataFrame):
     regional_metrics['Transaction Count'] = data.groupby('region').size()
     
     # Fix 9: Deprecation replacement (use_container_width=True -> width='stretch')
-    st.dataframe(regional_metrics.sort_values('Total Revenue', ascending=False), width='stretch')
+    #st.dataframe(regional_metrics.sort_values('Total Revenue', ascending=False), width='stretch')
+    st.dataframe(regional_metrics.sort_values('Total Revenue', ascending=False), use_container_width=True)
+
 
 def create_customer_analysis(data: pd.DataFrame):
     """Render customer segment analysis"""
