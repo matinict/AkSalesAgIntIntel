@@ -150,7 +150,7 @@ def create_dashboard_overview(data: pd.DataFrame):
         )
         fig.update_layout(showlegend=False, height=420)
         # Fix 1: Deprecation replacement (use_container_width=True -> width='stretch')
-        st.plotly_chart(fig, width='stretch') 
+        st.plotly_chart(fig, use_container_width=True) 
 
     # Revenue by Region (pie)
     with col2:
@@ -160,7 +160,7 @@ def create_dashboard_overview(data: pd.DataFrame):
             title='Revenue Share by Region', hole=0.4
         )
         # Fix 2: Deprecation replacement (use_container_width=True -> width='stretch')
-        st.plotly_chart(fig, width='stretch') 
+        st.plotly_chart(fig, use_container_width=True) 
 
     # Revenue Trend
     trend = data.groupby('date')['revenue'].sum().reset_index()
@@ -168,7 +168,7 @@ def create_dashboard_overview(data: pd.DataFrame):
                   markers=True, line_shape='spline')
     fig.update_traces(line_color='#1f77b4', line_width=3)
     # Fix 3: Deprecation replacement (use_container_width=True -> width='stretch')
-    st.plotly_chart(fig, width='stretch') 
+    st.plotly_chart(fig,use_container_width=True) 
 
 def create_products_analysis(data: pd.DataFrame):
     """Render products-focused analysis"""
@@ -205,7 +205,7 @@ def create_products_analysis(data: pd.DataFrame):
         yaxis={'categoryorder': 'total ascending'}
     )
     # Fix 4: Deprecation replacement (use_container_width=True -> width='stretch')
-    st.plotly_chart(fig, width='stretch')
+    st.plotly_chart(fig, use_container_width=True)
     
     # Products by Division
     col1, col2 = st.columns(2)
@@ -223,7 +223,7 @@ def create_products_analysis(data: pd.DataFrame):
         )
         fig.update_traces(texttemplate='৳%{text:,.0f}')
         # Fix 5: Deprecation replacement (use_container_width=True -> width='stretch')
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, use_container_width=True)
     
     with col2:
         # Product Performance Table - WITHOUT quantity_sold
@@ -237,7 +237,7 @@ def create_products_analysis(data: pd.DataFrame):
         # Add transaction count instead of quantity_sold
         product_summary['transaction_count'] = data.groupby('product').size()
         # Fix 6: Deprecation replacement (use_container_width=True -> width='stretch')
-        st.dataframe(product_summary.head(10), width='stretch')
+        st.dataframe(product_summary.head(10),use_container_width=True)
 
 def create_regional_analysis(data: pd.DataFrame):
     """Render regional performance analysis"""
@@ -307,7 +307,7 @@ def create_customer_analysis(data: pd.DataFrame):
             hole=0.4
         )
         # Fix 10: Deprecation replacement (use_container_width=True -> width='stretch')
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, use_container_width=True)
     
     with col2:
         # Customer Segment Performance - FIXED: Remove quantity_sold
@@ -326,7 +326,7 @@ def create_customer_analysis(data: pd.DataFrame):
         )
         fig.update_traces(texttemplate='৳%{text:,.0f}')
         # Fix 11: Deprecation replacement (use_container_width=True -> width='stretch')
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, use_container_width=True)
     
     # Customer Segment Details - FIXED: Remove quantity_sold
     st.subheader("Customer Segment Performance Details")
@@ -340,7 +340,8 @@ def create_customer_analysis(data: pd.DataFrame):
     segment_details.columns = ['Total Revenue', 'Avg Revenue', 'Transactions', 'Total Profit', 'Avg Margin']
     
     # Fix 12: Deprecation replacement (use_container_width=True -> width='stretch')
-    st.dataframe(segment_details, width='stretch')
+    #st.dataframe(segment_details, width='stretch')
+    st.dataframe(segment_details, use_container_width=True)
 
 def create_visualizations(data: pd.DataFrame):
     """Render all dashboard charts based on selected section"""
@@ -490,7 +491,8 @@ with st.sidebar:
     st.markdown("### System Control")
 
     # Fix 13: Deprecation replacement (use_container_width=True -> width='stretch')
-    if st.button("🔄 Refresh Data", width='stretch'): 
+    #if st.button("🔄 Refresh Data", width='stretch'): 
+    if st.button("Refresh Data", use_container_width=True , key="refresh_btn_main"):
         with st.spinner("Loading data..."):
             load_data()
         if st.session_state.data_loaded:
@@ -522,9 +524,11 @@ with st.sidebar:
         is_active = (st.session_state.active_tab == "dashboard" and 
                     st.session_state.dashboard_section == section_key)
         
+        
         if st.button(
             section_name,
-            width='stretch', # Fix 14: Deprecation replacement (use_container_width=True -> width='stretch')
+            #width='stretch', # Fix 14: Deprecation replacement (use_container_width=True -> width='stretch')
+            use_container_width=True,
             type="primary" if is_active else "secondary",
             key=f"dashboard_{section_key}"
         ):
@@ -535,7 +539,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("### ⚡ Quick Actions")
     # Fix 15: Deprecation replacement (use_container_width=True -> width='stretch')
-    if st.button("🗑️ Clear Chat History", width='stretch'): 
+    if st.button("🗑️ Clear Chat History", use_container_width=True): 
         st.session_state.chat_history = []
         st.rerun()
 
@@ -550,7 +554,7 @@ with st.sidebar:
     ]
     for q in samples:
         # Fix 16: Deprecation replacement (use_container_width=True -> width='stretch')
-        if st.button(q, width='stretch'): 
+        if st.button(q, use_container_width=True): 
             if st.session_state.data_loaded:
                 st.session_state.pending_query = q
                 st.session_state.active_tab = "chat"
@@ -571,7 +575,8 @@ st.markdown(f"<p style='text-align:center; color:#888;'>Report Date: {datetime.n
 if not st.session_state.data_loaded or st.session_state.sales_data is None:
     st.info("Click **'Refresh Data'** in the sidebar to load `akij_sales_data.csv`.")
     # Fix 17: Deprecation replacement (use_container_width=True -> width='stretch')
-    if st.button("Refresh Data", width='stretch'): 
+    #if st.button("Refresh Data", width='stretch'): 
+    if st.button("Refresh Data", use_container_width=True , key="refresh_btn_sidebar"): 
         with st.spinner("Loading data..."):
             load_data()
     if st.session_state.data_loaded:
@@ -630,7 +635,7 @@ if st.session_state.active_tab == "chat":
             key="chat_text_input"
         )
         # Fix 19: Deprecation replacement (use_container_width=True -> width='stretch')
-        submit = st.form_submit_button("Send", width='stretch') 
+        submit = st.form_submit_button("Send", use_container_width=True) 
 
     if submit and user_input.strip():
         st.session_state.chat_history.append({"role": "user", "content": user_input, "time": datetime.now()})
