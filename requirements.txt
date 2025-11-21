@@ -27,13 +27,16 @@ langchain-community==0.0.10
 # anthropic==0.8.1
 
 # Web Interface (for Streamlit chatbot)
-streamlit==1.29.0
+streamlit==1.39.0
 
 # Environment Management
 python-dotenv==1.0.0
 
+# For Jupyter Notebooks / nbconvert utility
+jupyter==1.0.0
+
 # Utilities
-warnings==0.1.0  # Built-in, but listed for completeness
+#wharnings==0.1.0  # Built-in, but listed for completeness
 
 # ===================================================================
 # INSTALLATION INSTRUCTIONS
@@ -41,6 +44,7 @@ warnings==0.1.0  # Built-in, but listed for completeness
 
 # METHOD 1: Install all dependencies
 # pip install -r requirements.txt
+# pip install -r requirements.txt --upgrade
 
 # METHOD 2: Install minimal (without LangChain/Streamlit)
 # pip install pandas numpy plotly python-dateutil
