@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+sales-env/
+venv/
+env/
+pycache/
+*.pyc
+*.pyd
+*.pyo
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+.installed.cfg
+.ipynb_checkpoints
+*.log
+*.tmp
+/data/
+akij_n8n_workflow.json
+akij_payload.json
+akij_sales_data.csv
+sales_agents.py

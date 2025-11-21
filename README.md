@@ -34,9 +34,9 @@ A comprehensive **Agentic Intelligence system** built to provide deep, real-time
     ├── README.md                          # Basic documentation
     ├── sales_agents.ipynb/.py             # Core: Multi-agent system (Jupyter Notebook)
     ├── chatbot_ui.py                      # Streamlit conversational interface
-    ├── akij_sales_data.csv       # Generated sales dataset (4000+ records)
-    ├── akij_payload_*.json           # AI payload for n8n integration
-    ├── akij_n8n_workflow*.json          # Importable n8n workflow
+    ├── akij_sales_data.csv                # Generated sales dataset (4000+ records)
+    ├── akij_payload_*.json                # AI payload for n8n integration
+    ├── akij_n8n_workflow*.json            # Importable n8n workflow
     │
     ├── requirements.txt                   # Python dependencies
     ├── .env.example                       # Environment configuration template
@@ -109,6 +109,18 @@ sales_agents.ipynb
 
 ### **B. Full Python Script (Complete Multi-Agent Logic)**
 
+#### Convert ipynb to py 
+
+    ```
+    jupyter nbconvert --to script sales_agents.ipynb
+    python3 sales_agents.py
+    streamlit run chatbot_ui.py
+
+    ```
+
+
+#### Or Old Converted file on docs
+
 ```bash
 python3 docs/sales_agents.py
 ```
@@ -164,4 +176,28 @@ This will unlock:
 * Region/Product/Channel explorations
 * Automated prescriptive recommendations
 
---- 
+
+ 
+
+### Single-Line Execution Command
+
+```bash
+jupyter nbconvert --to script sales_agents.ipynb && python3 sales_agents.py && streamlit run chatbot_ui.py
+# Or 3 line separate 
+jupyter nbconvert --to script sales_agents.ipynb
+python3 sales_agents.py
+streamlit run chatbot_ui.p
+```
+
+### Explanation of the Chain
+
+| Command | Purpose |
+| :--- | :--- |
+| `jupyter nbconvert ...` | Converts the Jupyter Notebook source into a runnable Python file (`sales_agents.py`). |
+| `&&` | **Dependency Operator.** Executes the next command only if the previous one (the conversion) exits with a success code (0). |
+| `python3 sales_agents.py` | Executes your Python script, which typically defines and runs the agents (Descriptive, Predictive, etc.) and generates final data/files. |
+| `&&` | **Dependency Operator.** Executes the next command only if the script execution completes successfully. |
+| `streamlit run chatbot_ui.py` | Launches the Streamlit application, which is the final, long-running user interface. |
+
+
+
