@@ -258,7 +258,7 @@ def create_regional_analysis(data: pd.DataFrame):
         )
         fig.update_traces(texttemplate='৳%{text:,.0f}')
         # Fix 7: Deprecation replacement (use_container_width=True -> width='stretch')
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, use_container_width=True)
     
     with col2:
         # Profit Margin by Region
@@ -273,7 +273,7 @@ def create_regional_analysis(data: pd.DataFrame):
         )
         fig.update_traces(texttemplate='%{text:.2f}%')
         # Fix 8: Deprecation replacement (use_container_width=True -> width='stretch')
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig,use_container_width=True)
     
     # Regional Performance Details - FIXED: Remove quantity_sold
     st.subheader("Regional Performance Metrics")
